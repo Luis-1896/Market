@@ -10,6 +10,7 @@ import { Shopping } from 'src/app/interfaces/shopping.interface';
 export class CartComponent implements OnInit {
 
 cart: Shopping[]=[];
+total:number;
 
   constructor(private cs: CartService) { }
 
@@ -21,6 +22,14 @@ cart: Shopping[]=[];
           ...shopping.payload.doc.data()
         }
       })
+    });
+
+    this.cs.getCart().subscribe(cart =>{
+       return this.total = this.cart.reduce((
+        acc,
+        obj,
+      ) => acc + (obj.amount* obj.price),
+      0);
     });
   }
 
