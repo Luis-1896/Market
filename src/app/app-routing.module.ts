@@ -11,11 +11,11 @@ import { AuthGuard } from './services/guards/auth.guard';
 
 const routes: Routes = [
 //All routes from directory
-{path:'',component:HomeComponent},
-{path:'login',component:LoginComponent},
-{path:'signup',component:SignupComponent},
-{path:'cart',component:CartComponent, canActivate:[AuthGuard]},
-{path:'admin',component:GoodsComponent, canActivate:[AuthGuard]},
+{path:'',component:HomeComponent, data:{index:0}},
+{path:'login',component:LoginComponent, data:{index:1}},
+{path:'signup',component:SignupComponent, data:{index:2}},
+{path:'cart',component:CartComponent, canActivate:[AuthGuard], data:{index:1}},
+{path:'admin',component:GoodsComponent, canActivate:[AuthGuard], data:{index:2}},
 {path:'**',component:NotFoundComponent}
 
 ];

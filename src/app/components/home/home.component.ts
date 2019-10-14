@@ -4,6 +4,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GoodsService } from 'src/app/services/goods.service';
 import { Subscription } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
  goodsObservable:Subscription;
  add:number=-1;
 
-  constructor(private gs:GoodsService, private cs: CartService) { }
+  constructor(private gs:GoodsService, private cs: CartService, private as:AuthService, private router:Router) { }
 
   ngOnInit() {
     //this.gs.getAllGoods().subscribe(data => this.goods = data);
@@ -36,7 +38,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   addToCart(index:number){
-    this.add=+index;
+    if(this.as.userId){
+      this.add=+index;
+    }else this.router.navigate(['/login']);
    
   }
 
