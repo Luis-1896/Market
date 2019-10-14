@@ -25,25 +25,34 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Compodoc
 
-Run `npm rum compodoc`to see the structure of the project developed. Navigate to `http://127.0.0.1:8080/`. 
+Run `npm rum compodoc`to see the structure of the project developed. Navigate to `http://127.0.0.1:8080/`.
 
-## Code scaffolding
+## Create an Admin user to upload products
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In Firebase choose the Authentication option and in access method enable E-mail / password.
+<br>
+<img height="300" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/3.JPG"/>
+<br>
+When the project server is running with ng serve, it is located in the sign up menu, fill in the data and then in Firebase choose the Database option and you will see that the root was created with the name of users and later the id which gives firebase to the user created with attributes that you entered. In the admin field you can select it and in value put false.
+<br>
+<img height="300" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/4.JPG"/>
+<br>
+Once the user is created and modified to admin, you can log in and in the Dashboard menu, you can add your products with the name, price and a product image.
+<br>
+<img height="300" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/5.JPG"/>
+<br>
 
-## Build
+## See the added products
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+In Home you can see all the added products that both you and admin and other users can buy the products that can be seen in the Cart menu
+<br>
+<img height="300" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/6.JPG"/>
+<br>
 
-## Running unit tests
+## See the products in the cart
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+You can see the products added to the cart and be able to modify the purchase or delete it.
+<br>
+<img height="300" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/7.JPG"/>
+<br>
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-j
