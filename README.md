@@ -1,10 +1,14 @@
 # Fruit
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8 , with Firebase for CRUD products, in addition to registering and logging in with a user. It also has Angular animations
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Compodoc
+
+Run `npm rum compodoc`to see the structure of the project developed. Navigate to `http://127.0.0.1:8080/`. 
 
 ## Code scaffolding
 
