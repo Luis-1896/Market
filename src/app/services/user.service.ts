@@ -10,10 +10,12 @@ export class UserService {
   constructor(private fs:AngularFirestore,private as:AuthService) { }
 
 
-addNewUser(id, name, address){
+addNewUser(id, name, address,admin){
   return this.fs.doc('users/'+id).set({
     name,
-    address
+    address,
+    admin:false
+
   })
 
 }

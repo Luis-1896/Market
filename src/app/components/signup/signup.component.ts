@@ -23,7 +23,7 @@ errorMessage:string='';
     this.as.signup(data.email,data.password)
     .then(reault => {
       this.errorMessage='';
-      this.us.addNewUser(reault.user.uid, data.name,data.address).then(()=>{
+      this.us.addNewUser(reault.user.uid, data.name,data.address,data.admin).then(()=>{
         this.router.navigate(['/']); 
       }).catch(err => console.log('fs',err));
     })
