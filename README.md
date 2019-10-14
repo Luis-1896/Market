@@ -12,7 +12,7 @@ First we move to the folder where the content of the project is from the termina
 
 ## Set up the project with a new Firebase
 
-![alt tag](http://https://raw.githubusercontent.com/Luis-1896/prueba/master/1.JPG)
+![Cat](http://https://raw.githubusercontent.com/Luis-1896/prueba/master/1.JPG)
 
 ## Development server
 
