@@ -10,6 +10,10 @@ Press the Clone or download button, choose the SSH option and copy the SSH key. 
 
 First we move to the folder where the content of the project is from the terminal and enter `npm install`, with this the node_modules folder is restored with all the libraries and imports important for the project.
 
+## Set up the project with a new Firebase
+
+http://https://raw.githubusercontent.com/Luis-1896/prueba/master/1.JPG
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
