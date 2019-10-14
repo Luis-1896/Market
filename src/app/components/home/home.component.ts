@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   addToCart(index:number){
     this.add=+index;
-   // console.log('added',index)
+   
   }
 
   buy(amount: number){
