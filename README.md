@@ -12,8 +12,9 @@ First we move to the folder where the content of the project is from the termina
 
 ## Set up the project with a new Firebase
 
+First we go to the [Firebase](https://firebase.google.com/) page and create a project by pressing the Get Started button, once the project is created, and according to the following image, we copy the attributes of firebaseConfig to our project in the enviroments.ts file
 <br>
-<img height="700" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/1.JPG"/>
+<img height="300" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/1.JPG"/>
 
 
 ## Development server
