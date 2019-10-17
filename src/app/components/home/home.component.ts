@@ -17,11 +17,10 @@ export class HomeComponent implements OnInit, OnDestroy {
  goodsObservable:Subscription;
  add:number=-1;
 
-  constructor(private gs:GoodsService, private cs: CartService, private as:AuthService, private router:Router) { }
+  constructor(private goodservice:GoodsService, private cartservice: CartService, private authservice:AuthService, private router:Router) { }
 
   ngOnInit() {
-    //this.gs.getAllGoods().subscribe(data => this.goods = data);
-    this.goodsObservable=this.gs.getAllGoods().subscribe(data => {
+    this.goodsObservable=this.goodservice.getAllGoods().subscribe(data => {
     this.goods=data.map(element=>{
         return {
           id:element.payload.doc.id,
@@ -29,19 +28,16 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
       });
     });
-
   }
 
   ngOnDestroy(){
     this.goodsObservable.unsubscribe();
-
   }
 
   addToCart(index:number){
-    if(this.as.userId){
+    if(this.authservice.userId){
       this.add=+index;
     }else this.router.navigate(['/login']);
-   
   }
 
   buy(amount: number){
@@ -51,9 +47,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       amount: +amount,
       price: selectedGood.price
     };
-    this.cs.addToCart(data).then(()=>this.add =-1)
-
-
+    this.cartservice.addToCart(data).then(()=>this.add =-1)
   }
 
 }

@@ -12,10 +12,11 @@ export class CartComponent implements OnInit {
 cart: Shopping[]=[];
 total:number;
 
-  constructor(private cs: CartService) { }
+  constructor(private cartservice: CartService) { }
 
   ngOnInit() {
-    this.cs.getCart().subscribe(cart =>{
+    
+    this.cartservice.getCart().subscribe(cart =>{
       this.cart=cart.map(shopping =>{
         return{
           id: shopping.payload.doc.id,
@@ -24,7 +25,7 @@ total:number;
       })
     });
 
-    this.cs.getCart().subscribe(cart =>{
+    this.cartservice.getCart().subscribe(cart =>{
        return this.total = this.cart.reduce((
         acc,
         obj,
@@ -34,11 +35,11 @@ total:number;
   }
 
   delete(index){
-    this.cs.delete(this.cart[index].id);
+    this.cartservice.delete(this.cart[index].id);
   }
 
   save(index){
-    this.cs.save(this.cart[index].id,this.cart[index].amount);
+    this.cartservice.save(this.cart[index].id,this.cart[index].amount);
   }
 
 }

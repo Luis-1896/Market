@@ -9,11 +9,11 @@ import { resolve } from 'dns';
 })
 export class AuthGuard implements CanActivate{
 
-  constructor(private as: AuthService, private router: Router) { }
+  constructor(private authservice: AuthService, private router: Router) { }
 
   canActivate(route:ActivatedRouteSnapshot, state:RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean>{
     return new Promise(resolve => {
-      this.as.user.subscribe(user =>{
+      this.authservice.user.subscribe(user =>{
         if (user) resolve(true);
         else{
           this.router.navigate(['/login']);

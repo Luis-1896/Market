@@ -7,28 +7,22 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-user:Observable<firebase.User>;
-userId:string='';
+  user:Observable<firebase.User>;
+  userId:string='';
 
-  constructor(private afAuth: AngularFireAuth) { 
-    this.user=afAuth.user;
+  constructor(private anguFireAuth: AngularFireAuth) { 
+    this.user=anguFireAuth.user;
   }
 
   signup(email, password){
-    return this.afAuth.auth.createUserWithEmailAndPassword(email,password);
-
+    return this.anguFireAuth.auth.createUserWithEmailAndPassword(email,password);
   }
 
   login(email, password){
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password);
-
+    return this.anguFireAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
   logout(){
-    return this.afAuth.auth.signOut();
-
+    return this.anguFireAuth.auth.signOut();
   }
-
-
-
 }

@@ -10,14 +10,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private as:AuthService, private router:Router) { }
+  constructor(private authservice:AuthService, private router:Router) { }
 
   ngOnInit() {
   }
 
   login(form){
     let data=form.value;
-    this.as.login(data.email, data.password)
+    this.authservice.login(data.email, data.password)
     .then(()=>{
         this.router.navigate(['/']); 
       }

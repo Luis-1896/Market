@@ -10,18 +10,18 @@ import { GoodsService } from 'src/app/services/goods.service';
 })
 export class GoodsComponent implements OnInit {
 
-@ViewChild('image', {static: true}) image:ElementRef
+  @ViewChild('image', {static: true}) image:ElementRef
 
-  constructor(private gs: GoodsService) { }
+  constructor(private goodservice: GoodsService) { }
 
   ngOnInit() {
   }
 
   addNewGood(form: NgForm){
-   let name=(<Good>form.value).name,
+    let name=(<Good>form.value).name,
       price=(<Good>form.value).price,
       image=(<HTMLInputElement>this.image.nativeElement).files[0];
-      this.gs.addNewGood(name,price,image).then(msg => console.log(msg));
+    this.goodservice.addNewGood(name,price,image).then(msg => console.log(msg));
   }
 
 }

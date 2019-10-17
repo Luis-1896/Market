@@ -7,21 +7,18 @@ import { AuthService } from './auth.service';
 })
 export class UserService {
 
-  constructor(private fs:AngularFirestore,private as:AuthService) { }
+  constructor(private angularfirestore:AngularFirestore, private authservice:AuthService) { }
 
-
-addNewUser(id, name, address,admin){
-  return this.fs.doc('users/'+id).set({
+addNewUser(id, name, address, admin){
+  return this.angularfirestore.doc('users/'+id).set({
     name,
     address,
     admin:false
-
-  })
-
+  });
 }
 
 getUserData(){
-  return this.fs.doc('users/'+this.as.userId).valueChanges();
+  return this.angularfirestore.doc('users/'+this.authservice.userId).valueChanges();
 }
 
 }

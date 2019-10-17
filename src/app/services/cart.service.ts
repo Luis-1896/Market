@@ -8,27 +8,24 @@ import { AuthService } from './auth.service';
 })
 export class CartService {
 
-  constructor(private fs:AngularFirestore, private as:AuthService) { }
+  constructor(private angularfirestore:AngularFirestore, private authservice:AuthService) { }
 
 addToCart(data: Good){
-  return this.fs.collection(`users/${this.as.userId}/cart`).add(data);
+  return this.angularfirestore.collection(`users/${this.authservice.userId}/cart`).add(data);
 }
 
 getCart(){
-  return this.fs.collection(`users/${this.as.userId}/cart`).snapshotChanges();
-
+  return this.angularfirestore.collection(`users/${this.authservice.userId}/cart`).snapshotChanges();
 }
 
 delete(id){
-  return this.fs.doc(`users/${this.as.userId}/cart/${id}`).delete();
-
+  return this.angularfirestore.doc(`users/${this.authservice.userId}/cart/${id}`).delete();
 }
 
 save(id, amount){
-  return this.fs.doc(`users/${this.as.userId}/cart/${id}`).update({
+  return this.angularfirestore.doc(`users/${this.authservice.userId}/cart/${id}`).update({
     amount
   });
-
 }
 
 }

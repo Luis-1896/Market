@@ -9,23 +9,25 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-isOpen:boolean=false; 
-isUser: boolean=false;
-isAdmin: boolean=false;
-  constructor(private as:AuthService, private us: UserService) { }
+
+  isOpen:boolean=false; 
+  isUser: boolean=false;
+  isAdmin: boolean=false;
+  constructor(private authservice:AuthService, private userservice: UserService) { }
 
   ngOnInit() {
-    this.as.user.subscribe(user =>{
-      if(user) {
+
+    this.authservice.user.subscribe(user =>{
+      if(user){
         this.isUser=true;
-        this.as.userId=user.uid;
-        this.us.getUserData().subscribe(data=>{
+        this.authservice.userId=user.uid;
+        this.userservice.getUserData().subscribe(data=>{
           if(data['admin'])this.isAdmin=true;
         })
       }
       else {
         this.isUser=false;
-        this.as.userId='';
+        this.authservice.userId='';
       }
     });
   }
@@ -35,8 +37,6 @@ isAdmin: boolean=false;
   }
 
   logout(){
-    this.as.logout();
-
+    this.authservice.logout();
   }
-
 }

@@ -13,19 +13,19 @@ export class SignupComponent implements OnInit {
 
 errorMessage:string='';
 
-  constructor(private as:AuthService, private us:UserService, private router:Router) { }
+  constructor(private authservice:AuthService, private userservice:UserService, private router:Router) { }
 
   ngOnInit() {
   }
 
   signup(form){
     let data:User =form.value;
-    this.as.signup(data.email,data.password)
+    this.authservice.signup(data.email,data.password)
     .then(reault => {
       this.errorMessage='';
-      this.us.addNewUser(reault.user.uid, data.name,data.address,data.admin).then(()=>{
+      this.userservice.addNewUser(reault.user.uid, data.name,data.address,data.admin).then(()=>{
         this.router.navigate(['/']); 
-      }).catch(err => console.log('fs',err));
+      }).catch(err => console.log('error',err));
     })
     .catch(err => {
       this.errorMessage=err.message;

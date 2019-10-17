@@ -3,5 +3,5 @@ export interface User{
     name?:string,
     address?:string,
     password?:string,
-    admin?:boolean //agregue
+    admin?:boolean 
 }
