@@ -13,7 +13,8 @@ export class NavbarComponent implements OnInit {
   isOpen:boolean=false; 
   isUser: boolean=false;
   isAdmin: boolean=false;
-  constructor(private authservice:AuthService, private userservice: UserService) { }
+
+   constructor(private authservice:AuthService, private userservice: UserService) { }
 
   ngOnInit() {
 

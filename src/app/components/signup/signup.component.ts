@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
 
 errorMessage:string='';
+hide = true;
 
   constructor(private authservice:AuthService, private userservice:UserService, private router:Router) { }
 

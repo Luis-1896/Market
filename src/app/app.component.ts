@@ -33,5 +33,5 @@ import { trigger, transition, query, group, style, animate } from '@angular/anim
 })
 export class AppComponent {
  // title = 'Fruit';
-  
+
 }

@@ -1,11 +1,12 @@
-<!---->
 <div class="nav">
   <app-navbar></app-navbar>
 </div>
-<!---->
 <br>
-<div class="container-fluid" >
+<div class="container-fluid">
   <div class="router-container" [@router]="myOutlet.activatedRouteData['index']">
-      <router-outlet #myOutlet="outlet"></router-outlet>
+    <router-outlet #myOutlet="outlet"></router-outlet>
   </div>
 </div>
+
+
+

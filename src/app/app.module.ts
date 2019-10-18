@@ -20,6 +20,13 @@ import { SignupComponent } from './components/signup/signup.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
+import { MatModule } from './mat/mat.module';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -30,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     SignupComponent,
     NotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,14 @@ import { FormsModule } from '@angular/forms';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [
     {provide:FirestoreSettingsToken,useValue:{}}

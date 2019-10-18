@@ -1,0 +1,11 @@
+.bg-light1{
+  background-color: #3f51b5;
+}
+#navbarcontent a{
+ color:white;
+  text-decoration:none;
+  height:100%;
+}
+#navbarcontent a:hover{
+  color:black;
+}

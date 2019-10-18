@@ -1,11 +1,21 @@
-<div>
-    <h2 class="text-center">Add New Product</h2>
+<div class="body">
+    <h2 class="mat-display-1 text-center">Add New Product</h2>
     <form #f="ngForm" (ngSubmit)="addNewGood(f)">
-        <input type="text" class="form-control" name="name" ngModel placeholder="Name" required>
-        <input type="number" class="form-control" name="price" ngModel placeholder="Price" required>
-        <input type="file" ngModel name="image" required #image>
+        <div class="example-container">
+            <mat-form-field>
+                <input matInput type="text" name="name" ngModel placeholder="Name" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="number" name="price" ngModel placeholder="Price" required>
+            </mat-form-field>
+        </div>
+        <div class="example-container">
+            <input type="file" ngModel name="image" required #image>
+        </div>
         <br>
         <br>
-        <input type="submit" value="Add" class="btn btn-primary" [disabled]="f.invalid">
+        <div class="activatebutton">
+            <button mat-raised-button color="primary" type="submit" value="Add" [disabled]="f.invalid" >Add</button>
+        </div>
     </form>
 </div>

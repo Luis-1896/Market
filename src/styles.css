@@ -1,6 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+.activatebutton{
+    padding-left: 45%;
+    padding-right: 40%;
+}
+
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+  
+.example-container > * {
+    width: 100%;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
 .form-control{
     margin-bottom: 10px;
+}
+
+html, body { 
+    height: 100%; 
 }
 
 .router-container{
@@ -13,7 +38,6 @@
     left: 0;
     right: 0;
 }
-/*
-body{
-    overflow: hidden;
-}*/
+
+
+

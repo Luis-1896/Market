@@ -1,4 +1,4 @@
-<div class="body">
+<!-- <div class="body">
     <h2 class="text-center">Sign Up</h2>
     <form #f="ngForm" (ngSubmit)="signup(f)">
         <input ngModel name="name" #name="ngModel" type="text" class="form-control" placeholder="Your name" required>
@@ -20,7 +20,54 @@
         <div class="alert alert-danger" *ngIf="address.invalid && address.touched">Address is required</div>
 
         <button class="btn btn-primary" [disabled]="f.invalid || passwordConfirm.value !== password.value" >Create Account</button><!--can be put here (click)="signup(f)"-->
-    </form>
+  <!--  </form>
     <br>
     <div class="aler alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
 </div>
+-->
+
+<div class="body">
+    <h2 class="mat-display-1 text-center">Sign Up</h2>
+        <form #f="ngForm" (ngSubmit)="signup(f)">
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput ngModel name="name" #name="ngModel" type="text" placeholder="Your name" required>
+                    <mat-error *ngIf="name.invalid && name.touched">Name is required</mat-error>
+                </mat-form-field>
+                
+                <mat-form-field>
+                    <input matInput ngModel name="email" #email="ngModel" type="email" placeholder="Email" required email>
+                    <mat-error *ngIf="email.touched && email.errors?.required">Email is required</mat-error>
+                    <mat-error *ngIf="email.touched && email.errors?.email">Your input doesn't match email format</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput ngModel name="password"  #password="ngModel" [type]="hide ? 'password' : 'text'" placeholder="Password" required minlength="6">
+                    <mat-error *ngIf="password.touched && password.errors?.required">Password is required</mat-error>
+                    <mat-error *ngIf="password.touched && password.errors?.minlength">Password should be +6 charachters</mat-error>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput ngModel name="passwordConfirm"  #passwordConfirm="ngModel" [type]="hide ? 'password' : 'text'"  placeholder="Confirm Password" required>
+                    <mat-error *ngIf="passwordConfirm.invalid && passwordConfirm.touched">Confirm Password is required</mat-error>
+                    <mat-error *ngIf="passwordConfirm.value !== password.value && passwordConfirm.touched">Password are not equal</mat-error>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+
+                 <mat-form-field>
+                    <input matInput ngModel name="address" #address="ngModel" type="text" placeholder="Address" required>
+                    <mat-error *ngIf="address.invalid && address.touched">Address is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="activatebutton">
+                <button mat-raised-button color="primary"  [disabled]="f.invalid || passwordConfirm.value !== password.value" >Create Account</button>
+            </div>              
+        </form>
+        <br>
+        <mat-error *ngIf="errorMessage">{{errorMessage}}</mat-error>
+    </div>

@@ -1,9 +1,9 @@
 <br>
 <div class="container">
 <table class="table table-bordered ">
-    <thead>
+    <thead class="text-center">
         <td>Name</td>
-        <td>Price</td>
+        <td >Price</td>
         <td>Amount</td>
         <td>Total</td>
         <td>Options</td>
@@ -13,12 +13,14 @@
             <td>{{good.name}}</td>
             <td>{{good.price | currency}}</td>
             <td>
-                <input  class="form-control" type="number" placeholder="Amount (kg)" [(ngModel)]="good.amount">
+                <mat-form-field class="example-full-width"> 
+                        <input matInput type="number" placeholder="Amount (kg)" [(ngModel)]="good.amount">   
+                </mat-form-field>
             </td>
             <td>{{(good.price*good.amount) | currency}}</td>
-            <td>
-                <button class="btn btn-primary" (click)="save(i)" >Save</button>
-                <button class="btn btn-danger" (click)="delete(i)" >Delete</button>
+            <td class="text-center">
+                <button mat-raised-button color="primary" (click)="save(i)" >Save <mat-icon>save</mat-icon></button>
+                <button mat-raised-button color="warn" (click)="delete(i)" >Delete <mat-icon>delete</mat-icon></button>
             </td>
         </tr>
     </tbody>
