@@ -31,19 +31,44 @@
                    <div class="content-data">
 
 <h1 id="fruit">Fruit</h1>
-<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 8.3.8.</p>
+<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 8.3.8 , with Firebase for CRUD products, in addition to registering and logging in with a user. It also has Angular animations</p>
+<h2 id="clone-project">Clone project</h2>
+<p>Press the Clone or download button, choose the SSH option and copy the SSH key. Then in your terminal for example if you use Git Bash, PowerShell or another, first create a directory where the project repository will be stored, once created, enter <code>git clone SSH key copied</code>for example <code>git clone git@github.com:Luis-1896/Market.git</code>.</p>
+<h2 id="restore-node_modules-of-the-angular-project">Restore node_modules of the angular project</h2>
+<p>First we move to the folder where the content of the project is from the terminal and enter <code>npm install</code>, with this the node_modules folder is restored with all the libraries and imports important for the project.</p>
+<h2 id="set-up-the-project-with-a-new-firebase">Set up the project with a new Firebase</h2>
+<p>First we go to the <a href="https://firebase.google.com/">Firebase</a> page and create a project by pressing the Get Started button, once the project is created, and according to the following image, we copy the attributes of firebaseConfig to our project in the enviroments.ts file
+<br>
+<img height="300" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/1.JPG"/>
+<br>
+<img height="300" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/2.JPG"/></p>
 <h2 id="development-server">Development server</h2>
 <p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
-<h2 id="code-scaffolding">Code scaffolding</h2>
-<p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
-<h2 id="build">Build</h2>
-<p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory. Use the <code>--prod</code> flag for a production build.</p>
-<h2 id="running-unit-tests">Running unit tests</h2>
-<p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
-<h2 id="running-end-to-end-tests">Running end-to-end tests</h2>
-<p>Run <code>ng e2e</code> to execute the end-to-end tests via <a href="http://www.protractortest.org/">Protractor</a>.</p>
-<h2 id="further-help">Further help</h2>
-<p>To get more help on the Angular CLI use <code>ng help</code> or go check out the <a href="https://github.com/angular/angular-cli/blob/master/README.md">Angular CLI README</a>.</p>
+<h2 id="compodoc">Compodoc</h2>
+<p>Run <code>npm rum compodoc</code>to see the structure of the project developed. Navigate to <code>http://127.0.0.1:8080/</code>.</p>
+<h2 id="create-an-admin-user-to-upload-products">Create an Admin user to upload products</h2>
+<p>In Firebase choose the Authentication option and in access method enable E-mail / password.
+<br>
+<img height="300" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/3.JPG"/>
+<br>
+When the project server is running with ng serve, it is located in the sign up menu, fill in the data and then in Firebase choose the Database option and you will see that the root was created with the name of users and later the id which gives firebase to the user created with attributes that you entered. In the admin field you can select it and in value put false.
+<br>
+<img height="300" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/4.JPG"/>
+<br>
+Once the user is created and modified to admin, you can log in and in the Dashboard menu, you can add your products with the name, price and a product image.
+<br>
+<img height="300" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/5.JPG"/>
+<br></p>
+<h2 id="see-the-added-products">See the added products</h2>
+<p>In Home you can see all the added products that both you and admin and other users can buy the products that can be seen in the Cart menu
+<br>
+<img height="300" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/6.JPG"/>
+<br></p>
+<h2 id="see-the-products-in-the-cart">See the products in the cart</h2>
+<p>You can see the products added to the cart and be able to modify the purchase or delete it.
+<br>
+<img height="300" src="https://raw.githubusercontent.com/Luis-1896/prueba/master/7.JPG"/>
+<br></p>
 
 
 

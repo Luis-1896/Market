@@ -105,12 +105,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(fs: AngularFirestore, as: <a href="../injectables/AuthService.html">AuthService</a>)</code>
+<code>constructor(angularfirestore: AngularFirestore, authservice: <a href="../injectables/AuthService.html">AuthService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/services/cart.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/cart.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -124,11 +124,12 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>fs</td>
+                                                        <td>angularfirestore</td>
                                                   
                                                         <td>
                                                                     <code>AngularFirestore</code>
@@ -138,9 +139,15 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>To add, update or delete the user&#39;s collection of the purchased</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>as</td>
+                                                        <td>authservice</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
@@ -150,6 +157,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>Get the user id</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -187,8 +200,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/services/cart.service.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/services/cart.service.ts:23</a></div>
                 </td>
             </tr>
 
@@ -204,6 +217,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -218,6 +232,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>To add a product</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -229,7 +247,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>A new product purchased</p>
+
                     </div>
                 </td>
             </tr>
@@ -257,8 +276,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/services/cart.service.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/services/cart.service.ts:36</a></div>
                 </td>
             </tr>
 
@@ -273,6 +292,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -284,6 +304,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Id purchase</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -295,7 +319,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Delete product purchase</p>
+
                     </div>
                 </td>
             </tr>
@@ -323,14 +348,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/services/cart.service.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/services/cart.service.ts:29</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get the purchase values</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -362,8 +389,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/services/cart.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/services/cart.service.ts:44</a></div>
                 </td>
             </tr>
 
@@ -378,6 +405,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -389,6 +417,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Id purchase</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>amount</td>
@@ -398,6 +430,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>modified amount of purchase</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -409,7 +445,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Update the purchase total</p>
+
                     </div>
                 </td>
             </tr>
@@ -429,29 +466,45 @@ import { AuthService } from &#x27;./auth.service&#x27;;
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+
+/**
+ * Shopping cart methods
+ */
 export class CartService {
-
-  constructor(private fs:AngularFirestore, private as:AuthService) { }
-
+  /**
+   * @param  angularfirestore - To add, update or delete the user&#x27;s collection of the purchased
+   * @param  authservice - Get the user id
+   */
+  constructor(private angularfirestore:AngularFirestore, private authservice:AuthService) { }
+/**
+ * @param  {Good} data  To add a product
+ * @returns A new product purchased
+ */
 addToCart(data: Good){
-  return this.fs.collection(&#x60;users/${this.as.userId}/cart&#x60;).add(data);
+  return this.angularfirestore.collection(&#x60;users/${this.authservice.userId}/cart&#x60;).add(data);
 }
-
+/**
+ * Get the purchase values
+ */
 getCart(){
-  return this.fs.collection(&#x60;users/${this.as.userId}/cart&#x60;).snapshotChanges();
-
+  return this.angularfirestore.collection(&#x60;users/${this.authservice.userId}/cart&#x60;).snapshotChanges();
 }
-
+/**
+ * @param  {} id Id purchase
+ * @returns Delete product purchase
+ */
 delete(id){
-  return this.fs.doc(&#x60;users/${this.as.userId}/cart/${id}&#x60;).delete();
-
+  return this.angularfirestore.doc(&#x60;users/${this.authservice.userId}/cart/${id}&#x60;).delete();
 }
-
+/**
+ * @param  {} id Id purchase
+ * @param  {} amount modified amount of purchase
+ * @returns Update the purchase total
+ */
 save(id, amount){
-  return this.fs.doc(&#x60;users/${this.as.userId}/cart/${id}&#x60;).update({
+  return this.angularfirestore.doc(&#x60;users/${this.authservice.userId}/cart/${id}&#x60;).update({
     amount
   });
-
 }
 
 }

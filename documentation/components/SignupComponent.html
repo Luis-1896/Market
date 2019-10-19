@@ -64,6 +64,13 @@
     <code>src/app/components/signup/signup.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Page to register new users</p>
+
+    </p>
 
 
     <p class="comment">
@@ -132,6 +139,9 @@
                             <li>
                                 <a href="#errorMessage">errorMessage</a>
                             </li>
+                            <li>
+                                <a href="#hide">hide</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -144,9 +154,6 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
-                            <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
                             <li>
                                 <a href="#signup">signup</a>
                             </li>
@@ -168,12 +175,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(as: <a href="../injectables/AuthService.html">AuthService</a>, us: <a href="../injectables/UserService.html">UserService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(authservice: <a href="../injectables/AuthService.html">AuthService</a>, userservice: <a href="../injectables/UserService.html">UserService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/signup/signup.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/signup/signup.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -187,11 +194,12 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>as</td>
+                                                        <td>authservice</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
@@ -201,9 +209,13 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>-Send attributes to the AuthService file signup method.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>us</td>
+                                                        <td>userservice</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
@@ -213,6 +225,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>-Send attributes to the addNewUser method of the UserService file to add it in Firebase.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -225,6 +241,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>-send the Home page</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -248,45 +268,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <b>
-                            ngOnInit
-                        </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/components/signup/signup.component.ts:18</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="signup"></a>
                     <span class="name">
                         <b>
@@ -305,8 +286,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/components/signup/signup.component.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/components/signup/signup.component.ts:39</a></div>
                 </td>
             </tr>
 
@@ -321,6 +302,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -332,6 +314,12 @@
                                     </td>
 
 
+                                    <td>
+                                        <ul>
+<li>Get the name, email, password and address values entered</li>
+</ul>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -343,7 +331,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Send the Home page if the email does not exist</p>
+
                     </div>
                 </td>
             </tr>
@@ -380,10 +369,48 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/signup/signup.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/signup/signup.component.ts:18</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Returns an error if the same email exists in the database</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hide"></a>
+                        <span class="name">
+                            <b>
+                            hide</b>
+                            <a href="#hide"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/signup/signup.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Hides the password or is visible if you select the icon</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -398,29 +425,47 @@ import { User } from &#x27;./../../interfaces/user.interface&#x27;;
 import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { AuthService } from &#x27;src/app/services/auth.service&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
-
+/**
+ * Page to register new users
+ */
 @Component({
   selector: &#x27;app-signup&#x27;,
   templateUrl: &#x27;./signup.component.html&#x27;,
   styleUrls: [&#x27;./signup.component.css&#x27;]
 })
 export class SignupComponent implements OnInit {
-
+/**
+ * Returns an error if the same email exists in the database
+ */
 errorMessage:string&#x3D;&#x27;&#x27;;
+/**
+ * Hides the password or is visible if you select the icon
+ */
+hide &#x3D; true;
+  /**
+   * @param  authservice -Send attributes to the AuthService file signup method.
+   * @param  userservice -Send attributes to the addNewUser method of the UserService file to add it in Firebase.
+   * @param  router -send the Home page
+   */
+  constructor(private authservice:AuthService, private userservice:UserService, private router:Router) { }
 
-  constructor(private as:AuthService, private us:UserService, private router:Router) { }
-
+  /**
+  * @ignore
+  */
   ngOnInit() {
   }
-
+  /**
+   * @param  {} form - Get the name, email, password and address values entered
+   * @returns Send the Home page if the email does not exist
+   */
   signup(form){
     let data:User &#x3D;form.value;
-    this.as.signup(data.email,data.password)
+    this.authservice.signup(data.email,data.password)
     .then(reault &#x3D;&gt; {
       this.errorMessage&#x3D;&#x27;&#x27;;
-      this.us.addNewUser(reault.user.uid, data.name,data.address,data.admin).then(()&#x3D;&gt;{
+      this.userservice.addNewUser(reault.user.uid, data.name,data.address,data.admin).then(()&#x3D;&gt;{
         this.router.navigate([&#x27;/&#x27;]); 
-      }).catch(err &#x3D;&gt; console.log(&#x27;fs&#x27;,err));
+      }).catch(err &#x3D;&gt; console.log(&#x27;error&#x27;,err));
     })
     .catch(err &#x3D;&gt; {
       this.errorMessage&#x3D;err.message;
@@ -433,31 +478,50 @@ errorMessage:string&#x3D;&#x27;&#x27;;
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;body&quot;&gt;
-    &lt;h2 class&#x3D;&quot;text-center&quot;&gt;Sign Up&lt;/h2&gt;
-    &lt;form #f&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;signup(f)&quot;&gt;
-        &lt;input ngModel name&#x3D;&quot;name&quot; #name&#x3D;&quot;ngModel&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Your name&quot; required&gt;
-        &lt;div class&#x3D;&quot;alert alert-danger&quot; *ngIf&#x3D;&quot;name.invalid &amp;&amp; name.touched&quot;&gt;Name is required&lt;/div&gt;
-        
-        &lt;input ngModel name&#x3D;&quot;email&quot; #email&#x3D;&quot;ngModel&quot; type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Email&quot; required email&gt;
-        &lt;div class&#x3D;&quot;alert alert-danger&quot; *ngIf&#x3D;&quot;email.touched &amp;&amp; email.errors?.required&quot;&gt;Email is required&lt;/div&gt;
-        &lt;div class&#x3D;&quot;alert alert-danger&quot; *ngIf&#x3D;&quot;email.touched &amp;&amp; email.errors?.email&quot;&gt;Your input doesn&#x27;t match email format&lt;/div&gt;
-       
-        &lt;input ngModel name&#x3D;&quot;password&quot; type&#x3D;&quot;password&quot; #password&#x3D;&quot;ngModel&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Password&quot; required minlength&#x3D;&quot;6&quot;&gt;
-        &lt;div class&#x3D;&quot;alert alert-danger&quot; *ngIf&#x3D;&quot;password.touched &amp;&amp; password.errors?.required&quot;&gt;Email is required&lt;/div&gt;
-        &lt;div class&#x3D;&quot;alert alert-danger&quot; *ngIf&#x3D;&quot;password.touched &amp;&amp; password.errors?.minlength&quot;&gt;Password should be 6+ charachters&lt;/div&gt;
+    &lt;h2 class&#x3D;&quot;mat-display-1 text-center&quot;&gt;Sign Up&lt;/h2&gt;
+        &lt;form #f&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;signup(f)&quot;&gt;
+            &lt;div class&#x3D;&quot;example-container&quot;&gt;
+                &lt;mat-form-field&gt;
+                    &lt;input matInput ngModel name&#x3D;&quot;name&quot; #name&#x3D;&quot;ngModel&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Your name&quot; required&gt;
+                    &lt;mat-error *ngIf&#x3D;&quot;name.invalid &amp;&amp; name.touched&quot;&gt;Name is required&lt;/mat-error&gt;
+                &lt;/mat-form-field&gt;
+                
+                &lt;mat-form-field&gt;
+                    &lt;input matInput ngModel name&#x3D;&quot;email&quot; #email&#x3D;&quot;ngModel&quot; type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Email&quot; required email&gt;
+                    &lt;mat-error *ngIf&#x3D;&quot;email.touched &amp;&amp; email.errors?.required&quot;&gt;Email is required&lt;/mat-error&gt;
+                    &lt;mat-error *ngIf&#x3D;&quot;email.touched &amp;&amp; email.errors?.email&quot;&gt;Your input doesn&#x27;t match email format&lt;/mat-error&gt;
+                &lt;/mat-form-field&gt;
 
-        &lt;input ngModel name&#x3D;&quot;passwordConfirm&quot; type&#x3D;&quot;password&quot; #passwordConfirm&#x3D;&quot;ngModel&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Confirm Password&quot; required &gt;
-        &lt;div class&#x3D;&quot;alert alert-danger&quot; *ngIf&#x3D;&quot;passwordConfirm.invalid &amp;&amp; passwordConfirm.touched&quot;&gt;Confirm Password is required&lt;/div&gt;
-        &lt;div class&#x3D;&quot;alert alert-danger&quot; *ngIf&#x3D;&quot;passwordConfirm.value !&#x3D;&#x3D; password.value &amp;&amp; passwordConfirm.touched&quot;&gt;Password are not equal&lt;/div&gt;
+                &lt;mat-form-field&gt;
+                    &lt;input matInput ngModel name&#x3D;&quot;password&quot;  #password&#x3D;&quot;ngModel&quot; [type]&#x3D;&quot;hide ? &#x27;password&#x27; : &#x27;text&#x27;&quot; placeholder&#x3D;&quot;Password&quot; required minlength&#x3D;&quot;6&quot;&gt;
+                    &lt;mat-error *ngIf&#x3D;&quot;password.touched &amp;&amp; password.errors?.required&quot;&gt;Password is required&lt;/mat-error&gt;
+                    &lt;mat-error *ngIf&#x3D;&quot;password.touched &amp;&amp; password.errors?.minlength&quot;&gt;Password should be +6 charachters&lt;/mat-error&gt;
+                    &lt;button mat-icon-button matSuffix (click)&#x3D;&quot;hide &#x3D; !hide&quot; [attr.aria-label]&#x3D;&quot;&#x27;Hide password&#x27;&quot; [attr.aria-pressed]&#x3D;&quot;hide&quot;&gt;
+                        &lt;mat-icon&gt;{{hide ? &#x27;visibility_off&#x27; : &#x27;visibility&#x27;}}&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                &lt;/mat-form-field&gt;
 
-        &lt;input ngModel name&#x3D;&quot;address&quot; #address&#x3D;&quot;ngModel&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Address&quot; required&gt;
-        &lt;div class&#x3D;&quot;alert alert-danger&quot; *ngIf&#x3D;&quot;address.invalid &amp;&amp; address.touched&quot;&gt;Address is required&lt;/div&gt;
+                &lt;mat-form-field&gt;
+                    &lt;input matInput ngModel name&#x3D;&quot;passwordConfirm&quot;  #passwordConfirm&#x3D;&quot;ngModel&quot; [type]&#x3D;&quot;hide ? &#x27;password&#x27; : &#x27;text&#x27;&quot;  placeholder&#x3D;&quot;Confirm Password&quot; required&gt;
+                    &lt;mat-error *ngIf&#x3D;&quot;passwordConfirm.invalid &amp;&amp; passwordConfirm.touched&quot;&gt;Confirm Password is required&lt;/mat-error&gt;
+                    &lt;mat-error *ngIf&#x3D;&quot;passwordConfirm.value !&#x3D;&#x3D; password.value &amp;&amp; passwordConfirm.touched&quot;&gt;Password are not equal&lt;/mat-error&gt;
+                    &lt;button mat-icon-button matSuffix (click)&#x3D;&quot;hide &#x3D; !hide&quot; [attr.aria-label]&#x3D;&quot;&#x27;Hide password&#x27;&quot; [attr.aria-pressed]&#x3D;&quot;hide&quot;&gt;
+                            &lt;mat-icon&gt;{{hide ? &#x27;visibility_off&#x27; : &#x27;visibility&#x27;}}&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                &lt;/mat-form-field&gt;
 
-        &lt;button class&#x3D;&quot;btn btn-primary&quot; [disabled]&#x3D;&quot;f.invalid || passwordConfirm.value !&#x3D;&#x3D; password.value&quot; &gt;Create Account&lt;/button&gt;&lt;!--can be put here (click)&#x3D;&quot;signup(f)&quot;--&gt;
-    &lt;/form&gt;
-    &lt;br&gt;
-    &lt;div class&#x3D;&quot;aler alert-danger&quot; *ngIf&#x3D;&quot;errorMessage&quot;&gt;{{errorMessage}}&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+                 &lt;mat-form-field&gt;
+                    &lt;input matInput ngModel name&#x3D;&quot;address&quot; #address&#x3D;&quot;ngModel&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Address&quot; required&gt;
+                    &lt;mat-error *ngIf&#x3D;&quot;address.invalid &amp;&amp; address.touched&quot;&gt;Address is required&lt;/mat-error&gt;
+                &lt;/mat-form-field&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;activatebutton&quot;&gt;
+                &lt;button mat-raised-button color&#x3D;&quot;primary&quot;  [disabled]&#x3D;&quot;f.invalid || passwordConfirm.value !&#x3D;&#x3D; password.value&quot; &gt;Create Account&lt;/button&gt;
+            &lt;/div&gt;              
+        &lt;/form&gt;
+        &lt;br&gt;
+        &lt;mat-error *ngIf&#x3D;&quot;errorMessage&quot;&gt;{{errorMessage}}&lt;/mat-error&gt;
+    &lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -492,7 +556,7 @@ errorMessage:string&#x3D;&#x27;&#x27;;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="body">    <h2 class="text-center">Sign Up</h2>    <form #f="ngForm" (ngSubmit)="signup(f)">        <input ngModel name="name" #name="ngModel" type="text" class="form-control" placeholder="Your name" required>        <div class="alert alert-danger" *ngIf="name.invalid && name.touched">Name is required</div>                <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="Email" required email>        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">Email is required</div>        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email">Your input doesn\'t match email format</div>               <input ngModel name="password" type="password" #password="ngModel" class="form-control" placeholder="Password" required minlength="6">        <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required">Email is required</div>        <div class="alert alert-danger" *ngIf="password.touched && password.errors?.minlength">Password should be 6+ charachters</div>        <input ngModel name="passwordConfirm" type="password" #passwordConfirm="ngModel" class="form-control" placeholder="Confirm Password" required >        <div class="alert alert-danger" *ngIf="passwordConfirm.invalid && passwordConfirm.touched">Confirm Password is required</div>        <div class="alert alert-danger" *ngIf="passwordConfirm.value !== password.value && passwordConfirm.touched">Password are not equal</div>        <input ngModel name="address" #address="ngModel" type="text" class="form-control" placeholder="Address" required>        <div class="alert alert-danger" *ngIf="address.invalid && address.touched">Address is required</div>        <button class="btn btn-primary" [disabled]="f.invalid || passwordConfirm.value !== password.value" >Create Account</button><!--can be put here (click)="signup(f)"-->    </form>    <br>    <div class="aler alert-danger" *ngIf="errorMessage">{{errorMessage}}</div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="body">    <h2 class="mat-display-1 text-center">Sign Up</h2>        <form #f="ngForm" (ngSubmit)="signup(f)">            <div class="example-container">                <mat-form-field>                    <input matInput ngModel name="name" #name="ngModel" type="text" placeholder="Your name" required>                    <mat-error *ngIf="name.invalid && name.touched">Name is required</mat-error>                </mat-form-field>                                <mat-form-field>                    <input matInput ngModel name="email" #email="ngModel" type="email" placeholder="Email" required email>                    <mat-error *ngIf="email.touched && email.errors?.required">Email is required</mat-error>                    <mat-error *ngIf="email.touched && email.errors?.email">Your input doesn\'t match email format</mat-error>                </mat-form-field>                <mat-form-field>                    <input matInput ngModel name="password"  #password="ngModel" [type]="hide ? \'password\' : \'text\'" placeholder="Password" required minlength="6">                    <mat-error *ngIf="password.touched && password.errors?.required">Password is required</mat-error>                    <mat-error *ngIf="password.touched && password.errors?.minlength">Password should be +6 charachters</mat-error>                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="\'Hide password\'" [attr.aria-pressed]="hide">                        <mat-icon>{{hide ? \'visibility_off\' : \'visibility\'}}</mat-icon>                    </button>                </mat-form-field>                <mat-form-field>                    <input matInput ngModel name="passwordConfirm"  #passwordConfirm="ngModel" [type]="hide ? \'password\' : \'text\'"  placeholder="Confirm Password" required>                    <mat-error *ngIf="passwordConfirm.invalid && passwordConfirm.touched">Confirm Password is required</mat-error>                    <mat-error *ngIf="passwordConfirm.value !== password.value && passwordConfirm.touched">Password are not equal</mat-error>                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="\'Hide password\'" [attr.aria-pressed]="hide">                            <mat-icon>{{hide ? \'visibility_off\' : \'visibility\'}}</mat-icon>                    </button>                </mat-form-field>                 <mat-form-field>                    <input matInput ngModel name="address" #address="ngModel" type="text" placeholder="Address" required>                    <mat-error *ngIf="address.invalid && address.touched">Address is required</mat-error>                </mat-form-field>            </div>            <div class="activatebutton">                <button mat-raised-button color="primary"  [disabled]="f.invalid || passwordConfirm.value !== password.value" >Create Account</button>            </div>                      </form>        <br>        <mat-error *ngIf="errorMessage">{{errorMessage}}</mat-error>    </div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'GoodsComponent', 'selector': 'app-goods'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'SignupComponent', 'selector': 'app-signup'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SignupComponent'};

@@ -64,6 +64,13 @@
     <code>src/app/app.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Animation component to move from one page to another.</p>
+
+    </p>
 
 
 
@@ -126,6 +133,10 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import { trigger, transition, query, group, style, animate } from &#x27;@angular/animations&#x27;;
 
+/**
+ * Animation component to move from one page to another.
+ *  
+ */
 @Component({
   selector: &#x27;app-root&#x27;,
   templateUrl: &#x27;./app.component.html&#x27;,
@@ -156,25 +167,26 @@ import { trigger, transition, query, group, style, animate } from &#x27;@angular
     ])
   ]
 })
+
 export class AppComponent {
- // title &#x3D; &#x27;Fruit&#x27;;
-  
+ //  title &#x3D; &#x27;Fruit&#x27;;
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!----&gt;
-&lt;div class&#x3D;&quot;nav&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;nav&quot;&gt;
   &lt;app-navbar&gt;&lt;/app-navbar&gt;
 &lt;/div&gt;
-&lt;!----&gt;
 &lt;br&gt;
-&lt;div class&#x3D;&quot;container-fluid&quot; &gt;
+&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
   &lt;div class&#x3D;&quot;router-container&quot; [@router]&#x3D;&quot;myOutlet.activatedRouteData[&#x27;index&#x27;]&quot;&gt;
-      &lt;router-outlet #myOutlet&#x3D;&quot;outlet&quot;&gt;&lt;/router-outlet&gt;
+    &lt;router-outlet #myOutlet&#x3D;&quot;outlet&quot;&gt;&lt;/router-outlet&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+
+
+
 </code></pre>
     </div>
 
@@ -184,11 +196,20 @@ export class AppComponent {
                 </p>
                 <pre class="line-numbers"><code class="language-scss">app-navbar{
     width:100%;
+    
 }
 
 .nav{
     margin-bottom: 15px;
-}</code></pre>
+    background-color: #3f51b5;
+    color:white;
+}
+
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+  }
+
+  </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -216,7 +237,7 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!----><div class="nav">  <app-navbar></app-navbar></div><!----><br><div class="container-fluid" >  <div class="router-container" [@router]="myOutlet.activatedRouteData[\'index\']">      <router-outlet #myOutlet="outlet"></router-outlet>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="nav">  <app-navbar></app-navbar></div><br><div class="container-fluid">  <div class="router-container" [@router]="myOutlet.activatedRouteData[\'index\']">    <router-outlet #myOutlet="outlet"></router-outlet>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'GoodsComponent', 'selector': 'app-goods'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'SignupComponent', 'selector': 'app-signup'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};

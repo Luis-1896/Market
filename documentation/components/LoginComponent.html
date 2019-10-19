@@ -64,6 +64,13 @@
     <code>src/app/components/login/login.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>User Login</p>
+
+    </p>
 
 
     <p class="comment">
@@ -133,9 +140,6 @@
                             <li>
                                 <a href="#login">login</a>
                             </li>
-                            <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -154,12 +158,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(as: <a href="../injectables/AuthService.html">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(authservice: <a href="../injectables/AuthService.html">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/login/login.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/login/login.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -173,11 +177,12 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>as</td>
+                                                        <td>authservice</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
@@ -187,6 +192,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>Send attributes to the AuthService file login method.</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -199,6 +210,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>Send the Home page</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -240,8 +257,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/components/login/login.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/components/login/login.component.ts:31</a></div>
                 </td>
             </tr>
 
@@ -256,6 +273,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -267,6 +285,12 @@
                                     </td>
 
 
+                                    <td>
+                                        <ul>
+<li>Get the email and password values entered</li>
+</ul>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -278,45 +302,7 @@
 
                     </div>
                     <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <b>
-                            ngOnInit
-                        </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/components/login/login.component.ts:15</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <p>Send the Home page if the email and password are correct</p>
 
                     </div>
                 </td>
@@ -332,8 +318,11 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { AuthService } from &#x27;src/app/services/auth.service&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
+import {FormControl, Validators} from &#x27;@angular/forms&#x27;;
 
-
+/**
+ * User Login
+ */
 @Component({
   selector: &#x27;app-login&#x27;,
   templateUrl: &#x27;./login.component.html&#x27;,
@@ -341,14 +330,24 @@ import { Router } from &#x27;@angular/router&#x27;;
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private as:AuthService, private router:Router) { }
+  /**
+   * @param  authservice - Send attributes to the AuthService file login method.
+   * @param  router - Send the Home page
+   */
+  constructor(private authservice:AuthService, private router:Router) { }
 
+  /**
+  * @ignore
+  */
   ngOnInit() {
   }
-
+  /**
+   * @param  {} form - Get the email and password values entered
+   * @returns Send the Home page if the email and password are correct
+   */
   login(form){
     let data&#x3D;form.value;
-    this.as.login(data.email, data.password)
+    this.authservice.login(data.email, data.password)
     .then(()&#x3D;&gt;{
         this.router.navigate([&#x27;/&#x27;]); 
       }
@@ -361,17 +360,24 @@ export class LoginComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;body&quot;&gt;
-    &lt;h2 class&#x3D;&quot;text-center&quot;&gt;Log In&lt;/h2&gt;
+    &lt;h2 class&#x3D;&quot;mat-display-1 text-center&quot;&gt;Log In&lt;/h2&gt;
     &lt;form #f&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;login(f)&quot;&gt;
-        &lt;input  ngModel name&#x3D;&quot;email&quot; #email&#x3D;&quot;ngModel&quot; type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Email&quot; required email&gt;
-        &lt;div class&#x3D;&quot;alert alert-danger&quot; *ngIf&#x3D;&quot;email.touched &amp;&amp; email.errors?.required&quot;&gt;Email is required&lt;/div&gt;
-        &lt;div class&#x3D;&quot;alert alert-danger&quot; *ngIf&#x3D;&quot;email.touched &amp;&amp; email.errors?.email&quot;&gt;Your input doesn&#x27;t match email format&lt;/div&gt;
-
-        &lt;input  ngModel name&#x3D;&quot;password&quot; #password&#x3D;&quot;ngModel&quot; type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Password&quot; required minlength&#x3D;&quot;6&quot;&gt;
-        &lt;div class&#x3D;&quot;alert alert-danger&quot; *ngIf&#x3D;&quot;password.touched &amp;&amp; password.errors?.required&quot;&gt;Password is required&lt;/div&gt;
-        &lt;div class&#x3D;&quot;alert alert-danger&quot; *ngIf&#x3D;&quot;password.touched &amp;&amp; password.errors?.minlength&quot;&gt;Password should be 6+charachters&lt;/div&gt;
-
-        &lt;button class&#x3D;&quot;btn btn-primary&quot; [disabled]&#x3D;&quot;f.invalid&quot;&gt;Login&lt;/button&gt;
+        &lt;div class&#x3D;&quot;example-container&quot;&gt;
+            &lt;mat-form-field&gt;
+                &lt;input matInput type&#x3D;&quot;email&quot; ngModel name&#x3D;&quot;email&quot; #email&#x3D;&quot;ngModel&quot; placeholder&#x3D;&quot;Email&quot; required email&gt;
+                &lt;mat-error *ngIf&#x3D;&quot;email.touched &amp;&amp; email.errors?.required&quot;&gt;Email is required&lt;/mat-error&gt;
+                &lt;mat-error *ngIf&#x3D;&quot;email.touched &amp;&amp; email.errors?.email&quot;&gt;Your input doesn&#x27;t match email format&lt;/mat-error&gt;
+            &lt;/mat-form-field&gt;
+            &lt;mat-form-field&gt;
+                &lt;input matInput type&#x3D;&quot;password&quot; ngModel name&#x3D;&quot;password&quot; #password&#x3D;&quot;ngModel&quot; type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Password&quot; required minlength&#x3D;&quot;6&quot;&gt;
+                &lt;mat-error *ngIf&#x3D;&quot;password.touched &amp;&amp; password.errors?.required&quot;&gt;Password is required&lt;/mat-error&gt;
+                &lt;mat-error *ngIf&#x3D;&quot;password.touched &amp;&amp; password.errors?.minlength&quot;&gt;Password should be +6 charachters&lt;/mat-error&gt;
+            &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+        &lt;br&gt;
+        &lt;div class&#x3D;&quot;activatebutton&quot;&gt;
+            &lt;button mat-raised-button color&#x3D;&quot;primary&quot; [disabled]&#x3D;&quot;f.invalid&quot;&gt;Login&lt;/button&gt;
+        &lt;/div&gt;
     &lt;/form&gt;
 &lt;/div&gt;
 </code></pre>
@@ -381,7 +387,9 @@ export class LoginComponent implements OnInit {
                 <p class="comment">
                     <code>./login.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">
+
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -409,7 +417,7 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="body">    <h2 class="text-center">Log In</h2>    <form #f="ngForm" (ngSubmit)="login(f)">        <input  ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="Email" required email>        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">Email is required</div>        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email">Your input doesn\'t match email format</div>        <input  ngModel name="password" #password="ngModel" type="password" class="form-control" placeholder="Password" required minlength="6">        <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required">Password is required</div>        <div class="alert alert-danger" *ngIf="password.touched && password.errors?.minlength">Password should be 6+charachters</div>        <button class="btn btn-primary" [disabled]="f.invalid">Login</button>    </form></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="body">    <h2 class="mat-display-1 text-center">Log In</h2>    <form #f="ngForm" (ngSubmit)="login(f)">        <div class="example-container">            <mat-form-field>                <input matInput type="email" ngModel name="email" #email="ngModel" placeholder="Email" required email>                <mat-error *ngIf="email.touched && email.errors?.required">Email is required</mat-error>                <mat-error *ngIf="email.touched && email.errors?.email">Your input doesn\'t match email format</mat-error>            </mat-form-field>            <mat-form-field>                <input matInput type="password" ngModel name="password" #password="ngModel" type="password" placeholder="Password" required minlength="6">                <mat-error *ngIf="password.touched && password.errors?.required">Password is required</mat-error>                <mat-error *ngIf="password.touched && password.errors?.minlength">Password should be +6 charachters</mat-error>            </mat-form-field>        </div>        <br>        <div class="activatebutton">            <button mat-raised-button color="primary" [disabled]="f.invalid">Login</button>        </div>    </form></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'GoodsComponent', 'selector': 'app-goods'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'SignupComponent', 'selector': 'app-signup'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};

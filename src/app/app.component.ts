@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { trigger, transition, query, group, style, animate } from '@angular/animations';
 
+/**
+ * Animation component to move from one page to another.
+ *  
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -31,7 +35,7 @@ import { trigger, transition, query, group, style, animate } from '@angular/anim
     ])
   ]
 })
-export class AppComponent {
- // title = 'Fruit';
 
+export class AppComponent {
+ //  title = 'Fruit';
 }

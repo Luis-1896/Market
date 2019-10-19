@@ -119,12 +119,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(afAuth: AngularFireAuth)</code>
+<code>constructor(anguFireAuth: AngularFireAuth)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/auth.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/services/auth.service.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -138,11 +138,12 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>afAuth</td>
+                                                        <td>anguFireAuth</td>
                                                   
                                                         <td>
                                                                     <code>AngularFireAuth</code>
@@ -152,6 +153,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>To authenticate the user</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -189,8 +196,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/services/auth.service.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/services/auth.service.ts:43</a></div>
                 </td>
             </tr>
 
@@ -205,6 +212,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -216,6 +224,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Email received to access your user account</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>password</td>
@@ -225,6 +237,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Password received to access your user account</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -236,7 +252,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Access your user account</p>
+
                     </div>
                 </td>
             </tr>
@@ -264,14 +281,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/services/auth.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/services/auth.service.ts:49</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Logout user account</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -303,8 +322,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/services/auth.service.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/services/auth.service.ts:34</a></div>
                 </td>
             </tr>
 
@@ -319,6 +338,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -330,6 +350,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Email received to enter new user</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>password</td>
@@ -339,6 +363,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Password received to enter new user</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -350,7 +378,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>A new user </p>
+
                     </div>
                 </td>
             </tr>
@@ -382,10 +411,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/auth.service.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/auth.service.ts:17</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Store the active user in the session</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -414,10 +449,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/auth.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/services/auth.service.ts:21</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Stoe the id user</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -434,32 +475,50 @@ import { Observable } from &#x27;rxjs&#x27;;
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+
+/** 
+ * The methods to log in, register, log out
+ */
 export class AuthService {
 
-user:Observable&lt;firebase.User&gt;;
-userId:string&#x3D;&#x27;&#x27;;
-
-  constructor(private afAuth: AngularFireAuth) { 
-    this.user&#x3D;afAuth.user;
+  /**
+   * Store the active user in the session
+   */
+  user:Observable&lt;firebase.User&gt;;
+  /**
+   * Stoe the id user
+   */
+  userId:string&#x3D;&#x27;&#x27;;
+  /**
+   * @param anguFireAuth - To authenticate the user
+   */
+  constructor(private anguFireAuth: AngularFireAuth) { 
+    this.user&#x3D;anguFireAuth.user;
   }
 
+  /**
+   * @param  {} email Email received to enter new user
+   * @param  {} password Password received to enter new user
+   * @returns A new user 
+   */
   signup(email, password){
-    return this.afAuth.auth.createUserWithEmailAndPassword(email,password);
-
+    return this.anguFireAuth.auth.createUserWithEmailAndPassword(email,password);
   }
 
+  /**
+   * @param  {} email Email received to access your user account
+   * @param  {} password Password received to access your user account
+   * @return Access your user account
+  */
   login(email, password){
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password);
-
+    return this.anguFireAuth.auth.signInWithEmailAndPassword(email, password);
   }
-
+  /**
+   * Logout user account
+   */
   logout(){
-    return this.afAuth.auth.signOut();
-
+    return this.anguFireAuth.auth.signOut();
   }
-
-
-
 }
 </code></pre>
     </div>

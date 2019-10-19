@@ -59,6 +59,13 @@
             <code>src/app/services/goods.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Methods to add or get a product</p>
+
+            </p>
 
 
 
@@ -99,12 +106,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(fs: AngularFirestore, storage: AngularFireStorage)</code>
+<code>constructor(angularfirestore: AngularFirestore, storage: AngularFireStorage)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/services/goods.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/goods.service.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -118,11 +125,12 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>fs</td>
+                                                        <td>angularfirestore</td>
                                                   
                                                         <td>
                                                                     <code>AngularFirestore</code>
@@ -132,6 +140,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>To add or get a product</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>storage</td>
@@ -144,6 +158,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>To add in Firebase storage a image</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -181,8 +201,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/services/goods.service.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/services/goods.service.ts:29</a></div>
                 </td>
             </tr>
 
@@ -198,6 +218,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -212,6 +233,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>To add name</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>price</td>
@@ -224,6 +249,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>To add price</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>image</td>
@@ -236,6 +265,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>To add image</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -247,7 +280,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>A new product add in firebase storage and firebase database</p>
+
                     </div>
                 </td>
             </tr>
@@ -275,14 +309,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/services/goods.service.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/services/goods.service.ts:20</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get all products</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -302,35 +338,43 @@
 import { AngularFirestore } from &#x27;@angular/fire/firestore&#x27;;
 import { AngularFireStorage } from &#x27;@angular/fire/storage&#x27;;
 
+/**
+ * Methods to add or get a product
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class GoodsService {
-
-  constructor(private fs:AngularFirestore, private storage: AngularFireStorage) { }
-
+  /**
+   * @param  angularfirestore - To add or get a product
+   * @param  storage - To add in Firebase storage a image
+   */
+  constructor(private angularfirestore:AngularFirestore, private storage: AngularFireStorage) { }
+/**
+ * Get all products
+ */
 getAllGoods(){
- //return this.fs.collection(&#x27;goods&#x27;).valueChanges();
- return this.fs.collection(&#x27;goods&#x27;).snapshotChanges();
-
+ return this.angularfirestore.collection(&#x27;goods&#x27;).snapshotChanges();
 }
-
+/**
+ * @param  {string} name To add name
+ * @param  {Number} price To add price
+ * @param  {File} image To add image
+ * @returns A new product add in firebase storage and firebase database
+ */
 addNewGood( name: string, price: Number, image: File){
   return new Promise ((resolve, reject)&#x3D;&gt;{
     let ref&#x3D;this.storage.ref(&#x27;goods/&#x27;+image.name)
-    ref.put(image).then(()&#x3D;&gt;{
-      ref.getDownloadURL().subscribe(photoUrl&#x3D;&gt;{
-       this.fs.collection(&#x27;goods&#x27;).add({
-        name,
-        price,
-        photoUrl
-        
-      }).then(()&#x3D;&gt;resolve(&#x27;hello&#x27;)) 
-     })
-   
-    })
+        ref.put(image).then(()&#x3D;&gt;{
+          ref.getDownloadURL().subscribe(photoUrl&#x3D;&gt;{
+            this.angularfirestore.collection(&#x27;goods&#x27;).add({
+              name,
+              price,
+              photoUrl
+            }).then(()&#x3D;&gt;resolve(&#x27;hello&#x27;)) 
+           })
+        })
   })
-   
 }
 
 }

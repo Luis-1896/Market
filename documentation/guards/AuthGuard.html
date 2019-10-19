@@ -61,6 +61,13 @@
                 <code>src/app/services/guards/auth.guard.ts</code>
             </p>
 
+                <p class="comment">
+                <h3>Description</h3>
+                </p>
+                <p class="comment">
+                    <p>To know if there is already a user in the system or to deny the purchase before logging </p>
+
+                </p>
 
 
 
@@ -99,12 +106,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(as: <a href="../injectables/AuthService.html">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(authservice: <a href="../injectables/AuthService.html">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/guards/auth.guard.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/services/guards/auth.guard.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -118,11 +125,12 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>as</td>
+                                                        <td>authservice</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
@@ -132,6 +140,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>Obtain the observable user to know if there is an active user in the system.</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -144,6 +158,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>Send the Login page</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -181,8 +201,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/services/guards/auth.guard.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/services/guards/auth.guard.ts:25</a></div>
                 </td>
             </tr>
 
@@ -198,6 +218,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -212,6 +233,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Contains the information about a route associated</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>state</td>
@@ -224,6 +249,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Represents the state of the router at a moment in time</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -235,7 +264,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>If a user is active or sends it to the login</p>
+
                     </div>
                 </td>
             </tr>
@@ -252,17 +282,30 @@ import { Observable } from &#x27;rxjs&#x27;;
 import { AuthService } from &#x27;../auth.service&#x27;;
 import { resolve } from &#x27;dns&#x27;;
 
+/**
+ * To know if there is already a user in the system or to deny the purchase before logging 
+ */
+
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class AuthGuard implements CanActivate{
-
-  constructor(private as: AuthService, private router: Router) { }
-
+  /**
+   * @param  authservice  - Obtain the observable user to know if there is an active user in the system.
+   * @param  router - Send the Login page
+   */
+  constructor(private authservice: AuthService, private router: Router) { }
+  /**
+   * @param  {ActivatedRouteSnapshot} route Contains the information about a route associated
+   * @param  {RouterStateSnapshot} state Represents the state of the router at a moment in time
+   * @returns If a user is active or sends it to the login
+   */
   canActivate(route:ActivatedRouteSnapshot, state:RouterStateSnapshot): boolean | Observable&lt;boolean&gt; | Promise&lt;boolean&gt;{
     return new Promise(resolve &#x3D;&gt; {
-      this.as.user.subscribe(user &#x3D;&gt;{
-        if (user) resolve(true);
+      this.authservice.user.subscribe(user &#x3D;&gt;{
+        if (user){
+          resolve(true);
+        }         
         else{
           this.router.navigate([&#x27;/login&#x27;]);
           resolve(false);

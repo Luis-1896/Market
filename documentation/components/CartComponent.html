@@ -64,6 +64,13 @@
     <code>src/app/components/cart/cart.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Shopping cart that the user acquired</p>
+
+    </p>
 
 
     <p class="comment">
@@ -174,12 +181,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(cs: <a href="../injectables/CartService.html">CartService</a>)</code>
+<code>constructor(cartservice: <a href="../injectables/CartService.html">CartService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/cart/cart.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/cart/cart.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -193,11 +200,12 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>cs</td>
+                                                        <td>cartservice</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/CartService.html" target="_self" >CartService</a></code>
@@ -207,6 +215,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>Gets the methods of CartService. Exactly from the getCart() method to get the product purchase and amount</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -248,8 +262,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/components/cart/cart.component.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/components/cart/cart.component.ts:54</a></div>
                 </td>
             </tr>
 
@@ -264,6 +278,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -275,6 +290,12 @@
                                     </td>
 
 
+                                    <td>
+                                        <ul>
+<li>Get the purchase to delete</li>
+</ul>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -286,7 +307,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Remove the purchase if the user no longer wants it.</p>
+
                     </div>
                 </td>
             </tr>
@@ -314,14 +336,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/components/cart/cart.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/components/cart/cart.component.ts:31</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Update the products purchase and amount and the sum total from product x amount</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -353,8 +377,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/components/cart/cart.component.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/components/cart/cart.component.ts:63</a></div>
                 </td>
             </tr>
 
@@ -369,6 +393,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -380,6 +405,12 @@
                                     </td>
 
 
+                                    <td>
+                                        <ul>
+<li>Get the purchase to save  in the Firebase</li>
+</ul>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -391,7 +422,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>The update of purchased products</p>
+
                     </div>
                 </td>
             </tr>
@@ -428,10 +460,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/cart/cart.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/cart/cart.component.ts:18</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Get the Shoopping variables</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -455,10 +493,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/cart/cart.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/cart/cart.component.ts:22</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Sum total from product x amount</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -472,6 +516,9 @@
 import { CartService } from &#x27;src/app/services/cart.service&#x27;;
 import { Shopping } from &#x27;src/app/interfaces/shopping.interface&#x27;;
 
+/**
+ * Shopping cart that the user acquired
+ */
 @Component({
   selector: &#x27;app-cart&#x27;,
   templateUrl: &#x27;./cart.component.html&#x27;,
@@ -479,13 +526,25 @@ import { Shopping } from &#x27;src/app/interfaces/shopping.interface&#x27;;
 })
 export class CartComponent implements OnInit {
 
+  /**
+   * Get the Shoopping variables
+   */
 cart: Shopping[]&#x3D;[];
+/**
+ * Sum total from product x amount
+ */
 total:number;
 
-  constructor(private cs: CartService) { }
-
+  /**
+   * @param cartservice - Gets the methods of CartService. Exactly from the getCart() method to get the product purchase and amount
+   */
+  constructor(private cartservice: CartService) { }
+  /**
+   * Update the products purchase and amount and the sum total from product x amount
+   */
   ngOnInit() {
-    this.cs.getCart().subscribe(cart &#x3D;&gt;{
+    
+    this.cartservice.getCart().subscribe(cart &#x3D;&gt;{
       this.cart&#x3D;cart.map(shopping &#x3D;&gt;{
         return{
           id: shopping.payload.doc.id,
@@ -494,21 +553,29 @@ total:number;
       })
     });
 
-    this.cs.getCart().subscribe(cart &#x3D;&gt;{
+    this.cartservice.getCart().subscribe(cart &#x3D;&gt;{
        return this.total &#x3D; this.cart.reduce((
         acc,
-        obj,
-      ) &#x3D;&gt; acc + (obj.amount* obj.price),
+        ob,
+      ) &#x3D;&gt; acc + (ob.amount* ob.price),
       0);
     });
   }
-
+  /**
+   * @param  {} index - Get the purchase to delete
+   * @returns Remove the purchase if the user no longer wants it.
+   */
   delete(index){
-    this.cs.delete(this.cart[index].id);
+    this.cartservice.delete(this.cart[index].id);
   }
 
+  
+  /**
+   * @param  {} index - Get the purchase to save  in the Firebase
+   * @returns The update of purchased products
+   */
   save(index){
-    this.cs.save(this.cart[index].id,this.cart[index].amount);
+    this.cartservice.save(this.cart[index].id,this.cart[index].amount);
   }
 
 }
@@ -519,9 +586,9 @@ total:number;
         <pre class="line-numbers"><code class="language-html">&lt;br&gt;
 &lt;div class&#x3D;&quot;container&quot;&gt;
 &lt;table class&#x3D;&quot;table table-bordered &quot;&gt;
-    &lt;thead&gt;
+    &lt;thead class&#x3D;&quot;text-center&quot;&gt;
         &lt;td&gt;Name&lt;/td&gt;
-        &lt;td&gt;Price&lt;/td&gt;
+        &lt;td &gt;Price&lt;/td&gt;
         &lt;td&gt;Amount&lt;/td&gt;
         &lt;td&gt;Total&lt;/td&gt;
         &lt;td&gt;Options&lt;/td&gt;
@@ -531,12 +598,14 @@ total:number;
             &lt;td&gt;{{good.name}}&lt;/td&gt;
             &lt;td&gt;{{good.price | currency}}&lt;/td&gt;
             &lt;td&gt;
-                &lt;input  class&#x3D;&quot;form-control&quot; type&#x3D;&quot;number&quot; placeholder&#x3D;&quot;Amount (kg)&quot; [(ngModel)]&#x3D;&quot;good.amount&quot;&gt;
+                &lt;mat-form-field class&#x3D;&quot;example-full-width&quot;&gt; 
+                        &lt;input matInput type&#x3D;&quot;number&quot; placeholder&#x3D;&quot;Amount (kg)&quot; [(ngModel)]&#x3D;&quot;good.amount&quot;&gt;   
+                &lt;/mat-form-field&gt;
             &lt;/td&gt;
             &lt;td&gt;{{(good.price*good.amount) | currency}}&lt;/td&gt;
-            &lt;td&gt;
-                &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;save(i)&quot; &gt;Save&lt;/button&gt;
-                &lt;button class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;&quot;delete(i)&quot; &gt;Delete&lt;/button&gt;
+            &lt;td class&#x3D;&quot;text-center&quot;&gt;
+                &lt;button mat-raised-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;save(i)&quot; &gt;Save &lt;mat-icon&gt;save&lt;/mat-icon&gt;&lt;/button&gt;
+                &lt;button mat-raised-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;delete(i)&quot; &gt;Delete &lt;mat-icon&gt;delete&lt;/mat-icon&gt;&lt;/button&gt;
             &lt;/td&gt;
         &lt;/tr&gt;
     &lt;/tbody&gt;
@@ -582,7 +651,7 @@ total:number;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><br><div class="container"><table class="table table-bordered ">    <thead>        <td>Name</td>        <td>Price</td>        <td>Amount</td>        <td>Total</td>        <td>Options</td>    </thead>    <tbody>        <tr *ngFor="let good of cart; index as i">            <td>{{good.name}}</td>            <td>{{good.price | currency}}</td>            <td>                <input  class="form-control" type="number" placeholder="Amount (kg)" [(ngModel)]="good.amount">            </td>            <td>{{(good.price*good.amount) | currency}}</td>            <td>                <button class="btn btn-primary" (click)="save(i)" >Save</button>                <button class="btn btn-danger" (click)="delete(i)" >Delete</button>            </td>        </tr>    </tbody>    <tr>        <td>Total:</td>        <td>{{ total | currency }}</td>    </tr></table></div></div>'
+        var COMPONENT_TEMPLATE = '<div><br><div class="container"><table class="table table-bordered ">    <thead class="text-center">        <td>Name</td>        <td >Price</td>        <td>Amount</td>        <td>Total</td>        <td>Options</td>    </thead>    <tbody>        <tr *ngFor="let good of cart; index as i">            <td>{{good.name}}</td>            <td>{{good.price | currency}}</td>            <td>                <mat-form-field class="example-full-width">                         <input matInput type="number" placeholder="Amount (kg)" [(ngModel)]="good.amount">                   </mat-form-field>            </td>            <td>{{(good.price*good.amount) | currency}}</td>            <td class="text-center">                <button mat-raised-button color="primary" (click)="save(i)" >Save <mat-icon>save</mat-icon></button>                <button mat-raised-button color="warn" (click)="delete(i)" >Delete <mat-icon>delete</mat-icon></button>            </td>        </tr>    </tbody>    <tr>        <td>Total:</td>        <td>{{ total | currency }}</td>    </tr></table></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'GoodsComponent', 'selector': 'app-goods'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'SignupComponent', 'selector': 'app-signup'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CartComponent'};

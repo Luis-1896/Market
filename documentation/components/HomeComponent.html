@@ -64,6 +64,13 @@
     <code>src/app/components/home/home.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Main page where existing products are displayed.</p>
+
+    </p>
 
 
     <p class="comment">
@@ -158,9 +165,6 @@
                                 <a href="#buy">buy</a>
                             </li>
                             <li>
-                                <a href="#ngOnDestroy">ngOnDestroy</a>
-                            </li>
-                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                         </ul>
@@ -181,12 +185,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(gs: <a href="../injectables/GoodsService.html">GoodsService</a>, cs: <a href="../injectables/CartService.html">CartService</a>, as: <a href="../injectables/AuthService.html">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(goodservice: <a href="../injectables/GoodsService.html">GoodsService</a>, cartservice: <a href="../injectables/CartService.html">CartService</a>, authservice: <a href="../injectables/AuthService.html">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/home/home.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/home/home.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -200,11 +204,12 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>gs</td>
+                                                        <td>goodservice</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/GoodsService.html" target="_self" >GoodsService</a></code>
@@ -214,9 +219,15 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>Gets the methods of GoodsService. Exactly from the getAllGoods() method to get all existing products</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>cs</td>
+                                                        <td>cartservice</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/CartService.html" target="_self" >CartService</a></code>
@@ -226,9 +237,15 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>Gets the methods of CartService. Exactly from the addToCart() method to send the data of the purchased product</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>as</td>
+                                                        <td>authservice</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
@@ -238,6 +255,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>Gets the methos and variables of AuthService. Exactly the userId variable to add the purchase to your account or send the login form</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -250,6 +273,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>Send the login form</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -291,8 +320,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/components/home/home.component.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/components/home/home.component.ts:61</a></div>
                 </td>
             </tr>
 
@@ -308,6 +337,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -322,6 +352,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Add the product id</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -333,7 +367,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>The product &quot;id&quot; is substituted in the value of &quot;add&quot; or sending to the form enter to buy the product</p>
+
                     </div>
                 </td>
             </tr>
@@ -361,8 +396,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/app/components/home/home.component.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/components/home/home.component.ts:71</a></div>
                 </td>
             </tr>
 
@@ -378,6 +413,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -392,6 +428,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Add the amount purchased</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -403,45 +443,7 @@
 
                     </div>
                     <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnDestroy"></a>
-                    <span class="name">
-                        <b>
-                            ngOnDestroy
-                        </b>
-                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnDestroy()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/components/home/home.component.ts:35</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <p>The product purchased</p>
 
                     </div>
                 </td>
@@ -470,14 +472,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/components/home/home.component.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/components/home/home.component.ts:41</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Update the products if the administrator delete or add a new one</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -518,10 +522,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/home/home.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/home/home.component.ts:30</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Add the product number</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -550,10 +560,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/home/home.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/home/home.component.ts:22</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Get the Good variables</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -577,10 +593,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/home/home.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/home/home.component.ts:26</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Get the goods observable</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -598,22 +620,40 @@ import { Subscription } from &#x27;rxjs&#x27;;
 import { CartService } from &#x27;src/app/services/cart.service&#x27;;
 import { AuthService } from &#x27;src/app/services/auth.service&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
-
+/**
+ * Main page where existing products are displayed.
+ */
 @Component({
   selector: &#x27;app-home&#x27;,
   templateUrl: &#x27;./home.component.html&#x27;,
   styleUrls: [&#x27;./home.component.css&#x27;]
 })
+
 export class HomeComponent implements OnInit, OnDestroy {
- goods:Good[]&#x3D;[];
+/**
+ * Get the Good variables
+ */
+  goods:Good[]&#x3D;[];
+  /**
+  * Get the goods observable
+  */
  goodsObservable:Subscription;
+ /**
+  * Add the product number
+  */
  add:number&#x3D;-1;
-
-  constructor(private gs:GoodsService, private cs: CartService, private as:AuthService, private router:Router) { }
-
+  /**
+   * @param  goodservice - Gets the methods of GoodsService. Exactly from the getAllGoods() method to get all existing products
+   * @param  cartservice - Gets the methods of CartService. Exactly from the addToCart() method to send the data of the purchased product
+   * @param  authservice - Gets the methos and variables of AuthService. Exactly the userId variable to add the purchase to your account or send the login form
+   * @param  router - Send the login form
+   */
+  constructor(private goodservice:GoodsService, private cartservice: CartService, private authservice:AuthService, private router:Router) { }
+  /**
+   * Update the products if the administrator delete or add a new one
+   */
   ngOnInit() {
-    //this.gs.getAllGoods().subscribe(data &#x3D;&gt; this.goods &#x3D; data);
-    this.goodsObservable&#x3D;this.gs.getAllGoods().subscribe(data &#x3D;&gt; {
+    this.goodsObservable&#x3D;this.goodservice.getAllGoods().subscribe(data &#x3D;&gt; {
     this.goods&#x3D;data.map(element&#x3D;&gt;{
         return {
           id:element.payload.doc.id,
@@ -621,20 +661,26 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
       });
     });
-
   }
-
+  /**
+  * @ignore
+  */
   ngOnDestroy(){
     this.goodsObservable.unsubscribe();
-
   }
-
+  /**
+   * @param  {number} index  Add the product id
+   * @returns The product &quot;id&quot; is substituted in the value of &quot;add&quot; or sending to the form enter to buy the product
+   */
   addToCart(index:number){
-    if(this.as.userId){
+    if(this.authservice.userId){
       this.add&#x3D;+index;
     }else this.router.navigate([&#x27;/login&#x27;]);
-   
   }
+/**
+ * @param  {number} amount Add the amount purchased
+ * @returns The product purchased
+ */
 
   buy(amount: number){
     let selectedGood &#x3D;this.goods[this.add];
@@ -643,9 +689,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       amount: +amount,
       price: selectedGood.price
     };
-    this.cs.addToCart(data).then(()&#x3D;&gt;this.add &#x3D;-1)
-
-
+    this.cartservice.addToCart(data).then(()&#x3D;&gt;this.add &#x3D;-1)
   }
 
 }
@@ -656,15 +700,16 @@ export class HomeComponent implements OnInit, OnDestroy {
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;body&quot;&gt;
     &lt;div class&#x3D;&quot;row&quot;&gt;
         &lt;div class&#x3D;&quot;col col-xs-12 col-md-6 col-lg-3&quot; *ngFor&#x3D;&quot;let good of goods; index as i&quot;&gt;
-            &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;width: 18rem;&quot;&gt;
+            &lt;br&gt;
+            &lt;div class&#x3D;&quot;card&quot;&gt;
                 &lt;img [src]&#x3D;&quot;good.photoUrl&quot; class&#x3D;&quot;card-img-top&quot;&gt;
-                &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                &lt;div class&#x3D;&quot;card-body text-center&quot;&gt;
                     &lt;h5 class&#x3D;&quot;card-title&quot;&gt;{{good.name | titlecase}}&lt;/h5&gt;
                     &lt;p class&#x3D;&quot;card-text&quot;&gt;{{good.price | currency}}&lt;/p&gt;
                     &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;addToCart(i)&quot; *ngIf&#x3D;&quot;add !&#x3D;&#x3D; i&quot;&gt; Add to cart&lt;/button&gt;
                     &lt;div *ngIf&#x3D;&quot;add &#x3D;&#x3D;&#x3D; i&quot;&gt;
                         &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Amount (kg)&quot; #amount&gt;
-                        &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;buy(amount.value)&quot;&gt;Buy&lt;/button&gt;
+                        &lt;button mat-raised-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;buy(amount.value)&quot;&gt;Buy&lt;/button&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
@@ -680,6 +725,9 @@ export class HomeComponent implements OnInit, OnDestroy {
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.card-img-top{
     height: 260px;
+}
+.card{
+    width: 18rem; background-color: #3f51b5; color:white;
 }</code></pre>
     </div>
 
@@ -708,7 +756,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="body">    <div class="row">        <div class="col col-xs-12 col-md-6 col-lg-3" *ngFor="let good of goods; index as i">            <div class="card" style="width: 18rem;">                <img [src]="good.photoUrl" class="card-img-top">                <div class="card-body">                    <h5 class="card-title">{{good.name | titlecase}}</h5>                    <p class="card-text">{{good.price | currency}}</p>                    <button class="btn btn-primary" (click)="addToCart(i)" *ngIf="add !== i"> Add to cart</button>                    <div *ngIf="add === i">                        <input type="number" class="form-control" placeholder="Amount (kg)" #amount>                        <button class="btn btn-primary" (click)="buy(amount.value)">Buy</button>                    </div>                </div>            </div>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="body">    <div class="row">        <div class="col col-xs-12 col-md-6 col-lg-3" *ngFor="let good of goods; index as i">            <br>            <div class="card">                <img [src]="good.photoUrl" class="card-img-top">                <div class="card-body text-center">                    <h5 class="card-title">{{good.name | titlecase}}</h5>                    <p class="card-text">{{good.price | currency}}</p>                    <button class="btn btn-primary" (click)="addToCart(i)" *ngIf="add !== i"> Add to cart</button>                    <div *ngIf="add === i">                        <input type="number" class="form-control" placeholder="Amount (kg)" #amount>                        <button mat-raised-button color="primary" (click)="buy(amount.value)">Buy</button>                    </div>                </div>            </div>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'GoodsComponent', 'selector': 'app-goods'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'SignupComponent', 'selector': 'app-signup'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent'};

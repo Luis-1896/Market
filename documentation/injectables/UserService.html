@@ -99,12 +99,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(fs: AngularFirestore, as: <a href="../injectables/AuthService.html">AuthService</a>)</code>
+<code>constructor(angularfirestore: AngularFirestore, authservice: <a href="../injectables/AuthService.html">AuthService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/services/user.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/user.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -118,11 +118,12 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>fs</td>
+                                                        <td>angularfirestore</td>
                                                   
                                                         <td>
                                                                     <code>AngularFirestore</code>
@@ -132,9 +133,15 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>To add some values to the Firebase database</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>as</td>
+                                                        <td>authservice</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
@@ -144,6 +151,12 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><ul>
+<li>Get the user id</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -181,8 +194,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/services/user.service.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/services/user.service.ts:25</a></div>
                 </td>
             </tr>
 
@@ -197,6 +210,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -208,6 +222,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>To add id</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>name</td>
@@ -217,6 +235,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>To add name</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>address</td>
@@ -226,6 +248,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>To add address</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>admin</td>
@@ -235,6 +261,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>To add value false in admin</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -246,7 +276,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>A new user</p>
+
                     </div>
                 </td>
             </tr>
@@ -274,14 +305,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/services/user.service.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/services/user.service.ts:35</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Get all user id values</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -304,23 +337,35 @@ import { AuthService } from &#x27;./auth.service&#x27;;
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+
+/**
+ * Methods for adding and get data from a user
+ */
 export class UserService {
-
-  constructor(private fs:AngularFirestore,private as:AuthService) { }
-
-
-addNewUser(id, name, address,admin){
-  return this.fs.doc(&#x27;users/&#x27;+id).set({
+  /**
+   * @param  angularfirestore - To add some values to the Firebase database
+   * @param  authservice - Get the user id
+   */
+  constructor(private angularfirestore:AngularFirestore, private authservice:AuthService) { }
+/**
+ * @param  {} id To add id
+ * @param  {} name To add name
+ * @param  {} address To add address
+ * @param  {} admin To add value false in admin
+ * @returns A new user
+ */
+addNewUser(id, name, address, admin){
+  return this.angularfirestore.doc(&#x27;users/&#x27;+id).set({
     name,
     address,
     admin:false
-
-  })
-
+  });
 }
-
+/**
+ * Get all user id values
+ */
 getUserData(){
-  return this.fs.doc(&#x27;users/&#x27;+this.as.userId).valueChanges();
+  return this.angularfirestore.doc(&#x27;users/&#x27;+this.authservice.userId).valueChanges();
 }
 
 }</code></pre>

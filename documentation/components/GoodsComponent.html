@@ -64,6 +64,13 @@
     <code>src/app/components/goods/goods.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Extra option for the administrator and is to add a new product</p>
+
+    </p>
 
 
     <p class="comment">
@@ -147,9 +154,6 @@
                             <li>
                                 <a href="#addNewGood">addNewGood</a>
                             </li>
-                            <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -168,12 +172,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(gs: <a href="../injectables/GoodsService.html">GoodsService</a>)</code>
+<code>constructor(goodservice: <a href="../injectables/GoodsService.html">GoodsService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/goods/goods.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/goods/goods.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -187,11 +191,12 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>gs</td>
+                                                        <td>goodservice</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/GoodsService.html" target="_self" >GoodsService</a></code>
@@ -201,6 +206,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>To add a new product in Firebase storage</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -242,8 +251,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/components/goods/goods.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/components/goods/goods.component.ts:35</a></div>
                 </td>
             </tr>
 
@@ -259,6 +268,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -273,6 +283,12 @@
                                     </td>
 
 
+                                    <td>
+                                        <ul>
+<li>Get the parameters entered, name, price and product image</li>
+</ul>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -284,45 +300,7 @@
 
                     </div>
                     <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <b>
-                            ngOnInit
-                        </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/components/goods/goods.component.ts:17</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <p>A new product in Firebase and any user can see it</p>
 
                     </div>
                 </td>
@@ -364,10 +342,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/goods/goods.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/goods/goods.component.ts:19</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Refers to an element in the HTML</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -382,25 +366,40 @@ import { NgForm } from &#x27;@angular/forms&#x27;;
 import { Good } from &#x27;src/app/interfaces/good.interface&#x27;;
 import { GoodsService } from &#x27;src/app/services/goods.service&#x27;;
 
+/**
+ * Extra option for the administrator and is to add a new product
+ */
 @Component({
   selector: &#x27;app-goods&#x27;,
   templateUrl: &#x27;./goods.component.html&#x27;,
   styleUrls: [&#x27;./goods.component.css&#x27;]
 })
 export class GoodsComponent implements OnInit {
+  /**
+   * Refers to an element in the HTML
+   * @returns ElementRef
+   */
+  @ViewChild(&#x27;image&#x27;, {static: true}) image:ElementRef
+ 
+  /**
+   * @param  goodservice To add a new product in Firebase storage
+   */
+  constructor(private goodservice: GoodsService) { }
 
-@ViewChild(&#x27;image&#x27;, {static: true}) image:ElementRef
-
-  constructor(private gs: GoodsService) { }
-
+  /**
+  * @ignore
+  */
   ngOnInit() {
   }
-
+  /**
+   * @param  {NgForm} form - Get the parameters entered, name, price and product image
+   * @returns A new product in Firebase and any user can see it
+   */
   addNewGood(form: NgForm){
-   let name&#x3D;(&lt;Good&gt;form.value).name,
+    let name&#x3D;(&lt;Good&gt;form.value).name,
       price&#x3D;(&lt;Good&gt;form.value).price,
       image&#x3D;(&lt;HTMLInputElement&gt;this.image.nativeElement).files[0];
-      this.gs.addNewGood(name,price,image).then(msg &#x3D;&gt; console.log(msg));
+    this.goodservice.addNewGood(name,price,image).then(msg &#x3D;&gt; console.log(msg));
   }
 
 }
@@ -408,15 +407,25 @@ export class GoodsComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div&gt;
-    &lt;h2 class&#x3D;&quot;text-center&quot;&gt;Add New Product&lt;/h2&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;body&quot;&gt;
+    &lt;h2 class&#x3D;&quot;mat-display-1 text-center&quot;&gt;Add New Product&lt;/h2&gt;
     &lt;form #f&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;addNewGood(f)&quot;&gt;
-        &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;name&quot; ngModel placeholder&#x3D;&quot;Name&quot; required&gt;
-        &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;price&quot; ngModel placeholder&#x3D;&quot;Price&quot; required&gt;
-        &lt;input type&#x3D;&quot;file&quot; ngModel name&#x3D;&quot;image&quot; required #image&gt;
+        &lt;div class&#x3D;&quot;example-container&quot;&gt;
+            &lt;mat-form-field&gt;
+                &lt;input matInput type&#x3D;&quot;text&quot; name&#x3D;&quot;name&quot; ngModel placeholder&#x3D;&quot;Name&quot; required&gt;
+            &lt;/mat-form-field&gt;
+            &lt;mat-form-field&gt;
+                &lt;input matInput type&#x3D;&quot;number&quot; name&#x3D;&quot;price&quot; ngModel placeholder&#x3D;&quot;Price&quot; required&gt;
+            &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;example-container&quot;&gt;
+            &lt;input type&#x3D;&quot;file&quot; ngModel name&#x3D;&quot;image&quot; required #image&gt;
+        &lt;/div&gt;
         &lt;br&gt;
         &lt;br&gt;
-        &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Add&quot; class&#x3D;&quot;btn btn-primary&quot; [disabled]&#x3D;&quot;f.invalid&quot;&gt;
+        &lt;div class&#x3D;&quot;activatebutton&quot;&gt;
+            &lt;button mat-raised-button color&#x3D;&quot;primary&quot; type&#x3D;&quot;submit&quot; value&#x3D;&quot;Add&quot; [disabled]&#x3D;&quot;f.invalid&quot; &gt;Add&lt;/button&gt;
+        &lt;/div&gt;
     &lt;/form&gt;
 &lt;/div&gt;
 </code></pre>
@@ -454,7 +463,7 @@ export class GoodsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div>    <h2 class="text-center">Add New Product</h2>    <form #f="ngForm" (ngSubmit)="addNewGood(f)">        <input type="text" class="form-control" name="name" ngModel placeholder="Name" required>        <input type="number" class="form-control" name="price" ngModel placeholder="Price" required>        <input type="file" ngModel name="image" required #image>        <br>        <br>        <input type="submit" value="Add" class="btn btn-primary" [disabled]="f.invalid">    </form></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="body">    <h2 class="mat-display-1 text-center">Add New Product</h2>    <form #f="ngForm" (ngSubmit)="addNewGood(f)">        <div class="example-container">            <mat-form-field>                <input matInput type="text" name="name" ngModel placeholder="Name" required>            </mat-form-field>            <mat-form-field>                <input matInput type="number" name="price" ngModel placeholder="Price" required>            </mat-form-field>        </div>        <div class="example-container">            <input type="file" ngModel name="image" required #image>        </div>        <br>        <br>        <div class="activatebutton">            <button mat-raised-button color="primary" type="submit" value="Add" [disabled]="f.invalid" >Add</button>        </div>    </form></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'GoodsComponent', 'selector': 'app-goods'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'SignupComponent', 'selector': 'app-signup'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'GoodsComponent'};

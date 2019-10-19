@@ -55,13 +55,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-4ac082c684c0c76584207a2b88fa3286"' : 'data-target="#xs-components-links-module-AppModule-4ac082c684c0c76584207a2b88fa3286"' }>
+                                            'data-target="#components-links-module-AppModule-16e515a1f82e018a06b4442dffe1cd2f"' : 'data-target="#xs-components-links-module-AppModule-16e515a1f82e018a06b4442dffe1cd2f"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-4ac082c684c0c76584207a2b88fa3286"' :
-                                            'id="xs-components-links-module-AppModule-4ac082c684c0c76584207a2b88fa3286"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-16e515a1f82e018a06b4442dffe1cd2f"' :
+                                            'id="xs-components-links-module-AppModule-16e515a1f82e018a06b4442dffe1cd2f"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -99,6 +99,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="modules/AppRoutingModule.html" data-type="entity-link">AppRoutingModule</a>
+                            </li>
+                            <li class="link">
+                                <a href="modules/MatModule.html" data-type="entity-link">MatModule</a>
                             </li>
                 </ul>
                 </li>
